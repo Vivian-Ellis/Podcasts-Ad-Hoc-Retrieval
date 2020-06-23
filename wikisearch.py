@@ -32,14 +32,11 @@ def preprocess(text):
 
 processed_adhoc=preprocess(summary)
 
-print(processed_adhoc)
-
 #load the model
 lda_model=joblib.load('62topiclda.pkl')
 
 #create a dictionary from processed_adhoc containing the number of times a word appears
-dictionary=gensim.corpora.Dictionary([processed_adhoc])
-lda_model.id2word=dictionary
+dictionary=('dictionary')
 
 #create bow vector
 bow_vector=dictionary.doc2bow(processed_adhoc)
